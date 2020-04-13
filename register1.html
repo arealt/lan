@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            .container{
+				width:600px;
+				margin:0 auto;
+			}
+			h3{padding-left:33%;}
+			.form>div{padding:10px 10px;font-size:18px;}
+			.form>div>label>input{height:60px;width:300px;font-size:18px;padding-left:10px;}
+			.form input{height:30px;width:80px;}
+			.form placeholder{font-size:14px;}
+			.form>div span{padding:0 0 0 20px;;font-size:12px;}
+			.success{color:green;}
+			.error{color:red;}
+			.regist{margin-left:160px;height:30px;padding:5px 10px;}
+			.cancel{margin-left:30px;height:30px;padding:5px 10px;}
+			.form img{width:2em;}
+			.form>.ico{margin:0;padding:0;position:absolute;top:5em;right:12em;width:6em;height:12em;border:1px #333 solid;display:none;}
+			.form>.ico>img{margin:0;padding:0;vertical-align:middle;opacity:.8;}
+			.form>.ico>img:hover{opacity:1;}
+        </style>
+    </head>
+    <body>
+		<div class="container">
+			<h3 >注册用户</h3>
+			<form action="register.php" method="post" class="form">	
+				<div class="ico">
+					<img src="https://s2.ax1x.com/2020/03/09/8Sdm40.png" /><img src="https://s2.ax1x.com/2020/03/09/8SdABj.png" /><img src="https://s2.ax1x.com/2020/03/09/8SdZEn.png" />
+					<img src="https://s2.ax1x.com/2020/03/09/8Sa5A1.png" /><img src="https://s2.ax1x.com/2020/03/09/8SafB9.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8Sdijg.jpg" />
+					<img src="https://s2.ax1x.com/2020/03/09/8Sa79K.png" /><img src="https://s2.ax1x.com/2020/03/09/8Sa2X4.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8Saw0s.png" />
+					<img src="https://s2.ax1x.com/2020/03/09/8SabcD.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8Sa6pT.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8SaN6g.jpg" />
+					<img src="https://s2.ax1x.com/2020/03/09/8SajHA.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8SaDkq.png" /><img src="https://s2.ax1x.com/2020/03/09/8SdC38.jpg" />
+					<img src="https://s2.ax1x.com/2020/03/09/8SazNt.png" /><img src="https://s2.ax1x.com/2020/03/09/8SaYp8.jpg" /><img src="https://s2.ax1x.com/2020/03/09/8Sa8tP.jpg" />
+				</div>
+				<div style="padding-left:7em;">用户头像：<img class='showico' src="ico/01.jfif" /><input type='button' class='chicon' value="更换头像" /><input type="text" value='01.jfif' class='userico' style="display:none;" /></div>
+				<div><label>呢称：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class='callname' placeholder="请输入昵称" height="120" autofocus /><span></span></label></div>
+				<div>性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='radio' name='sex' value='1' >男&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type='radio' name='sex' value='0' >女</div>
+				<div><label>账号：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class='username' placeholder="请输入账号" height="120" autofocus /><span></span></label></div>
+				<div><label>密 码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" class='pwd' placeholder="请输入密码" /><span></span></label></div>
+				<div><label>确认密码：<input type="text" class='pwd2' placeholder="请输入确认密码" /><span></span></label></div>
+				<input type='button' value="注册用户" class='regist' />
+				<button class='cancel'><a>取消注册</a></button>
+			</form>
+		</div>
+		<script>
+			var showico = document.querySelector('.showico');
+			var ico = document.querySelector('.ico');
+			var userico = document.querySelector('.userico');
+			var icos=document.querySelectorAll('.ico img');
+			for(let i=0;i<icos.length;i++){
+				icos[i].addEventListener('click',function(e){
+					let file=(e.srcElement.src).split('ico/')[1];
+					userico.value=file;
+					ico.style.display='none';
+					showico.src="ico/"+file;
+					})
+				
+			}
+			document.querySelector('.chicon').addEventListener('click',function(){ico.style.display='block'});
+			var callname = document.querySelector('.callname');
+			var pwd = document.querySelector('.pwd');
+			var pwd2 = document.querySelector('.pwd2');
+			var username = document.querySelector('.username');
+			username.addEventListener('click',function(){console.log('username');})
+			var callnameReg=/^[a-zA-Z0-9\u4e00-\u9fa5]{4,8}$/;
+			var pwdReg=/^[a-zA-Z0-9]{6,12}$/;
+			var pwd2Reg=/^[a-zA-Z0-9]{6,12}$/;
+			var usernameReg=/^[a-zA-Z0-9]{4,8}$/;
+			function regExp(ele,reg,info){
+				if(ele.value.trim()!=""&reg.test(ele.value)){
+					ele.nextSibling.className='success';
+					ele.nextSibling.innerHTML="☑ 输入正确";
+					console.log(ele.nextSibling);
+				}else if(ele.value.trim()!=""){
+					ele.nextSibling.className='error';
+					ele.nextSibling.innerHTML="☒输入错误"+info;
+					console.log(ele.nextSibling);
+				}
+			}
+			callname.onblur=function(){regExp(this,callnameReg,"用户呢称4-8位")};
+			pwd.onblur=function(){regExp(this,pwdReg,"密码为6-12位")};
+			pwd2.onblur=function(){regExp(this,pwd2Reg,"两次密码不同")};
+			username.onblur=function(){regExp(this,usernameReg,"账号为4-8位字母或数字")};	
+		
+		</script>
+    </body>
+</html>

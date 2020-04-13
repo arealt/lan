@@ -1,0 +1,55 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0;}
+html,body{width:100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+ol,ul{list-style:none}
+a{text-decoration:none}
+a:hover{}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left}
+.right{float:right}
+.overflow{overflow:hidden}
+.hide{display:none}
+.block{display:block}
+.inline{display:inline}
+.error{color:red;font-size:12px}
+button,label{cursor:pointer}
+.clearfix:after{content:'\20';display:block;height:0;clear:both}
+.clearfix{zoom:1}
+.clear{clear:both;height:0;line-height:0;font-size:0;visibility:hidden;overflow:hidden}
+.wordwrap{word-break:break-all;word-wrap:break-word}
+.s-yahei{font-family:arial,'Microsoft Yahei','微软雅黑'}
+td{text-align:left}
+img{border:0}
+.color-hot{color:#088fdc;}
+.c-color-t{color:#222}
+.c-color-text{color:#333}
+.c-color-gray{color:#626675}
+.c-color-gray2{color:#9195a3}
+.c-color-visited{color:#626675}
+.c-color-link{color:#222}
+.c-color-orange{color:#fa4901}
+.c-color-green{color:#0ebe90}
+.c-color-ad{color:#77a9f9}
+.c-color-red{color:#f63051}
+.c-color-red:visited{color:#f63051}
+.c-color-warn{color:#ff7900}
+.c-color-warn:visited{color:#ff7900}
+.rel{position: relative;}
+/*heaeder css*/
+.container{width:100%;background-color: #fafafa;}
+.header{position:fixed;top:0;height:2.5em;background-color:#088fdc;width:100%;color:#fff;}
+.header>div{width:90%;margin: 0 auto;}
+.header .nav-left{width:72%;height:2.5em;}
+.header form{position: absolute;top:0.36em;right:0;}
+.header .nav-left>span{display:inline-block;line-height: 2.5em;position: absolute;top:0em;left:3em;}
+.nav-left>span:first-child{font-size:.3em;letter-spacing:.1em;top:3em;left:1em;}
+#search{padding-top: .3em;}
+.regist{line-height: 2.5em;}
+.regist a{color:#fff;}
+/*footer css*/
+.footer{text-align: center;padding: 1em 0 1em;border-top: 1px solid ##088fdc;}
+.footer>div:nth-child(1){font-size:1em;}
+.footer>div:last-child{}
